@@ -19,5 +19,5 @@ sudo systemctl enable docker --now
 sudo usermod -aG docker $USER
 
 cd ghp
-docker build -t kiddoctf .
-docker run --rm -ti kiddoctf:latest
+sudo docker build -t kiddoctf .
+sudo docker run --rm -ti kiddoctf:latest
