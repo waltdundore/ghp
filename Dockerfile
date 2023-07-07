@@ -1,5 +1,5 @@
 # Base
-FROM centos:latest
+FROM rockylinux:8.8
 
 # Prep
 RUN yum -y install nc net-tools nmap file tcpdump unzip
