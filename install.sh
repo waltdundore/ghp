@@ -2,7 +2,10 @@
 
 cd ~
 sudo apt -y install git
+
+if [ -d "ghp" ]; then
 git clone -b master https://github.com/waltdundore/ghp.git
+fi
 
 sudo apt -y update
 
@@ -19,5 +22,5 @@ sudo systemctl enable docker --now
 sudo usermod -aG docker $USER
 
 cd ghp
-sudo docker build -t kiddoctf .
-sudo docker run --rm -ti kiddoctf:latest
+sudo docker build -t ghpctf .
+sudo docker run --rm -ti ghpctf:latest
