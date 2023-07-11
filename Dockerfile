@@ -2,10 +2,11 @@
 FROM centos:centos7.9.2009
 
 # Prep
-RUN yum -y install nc net-tools nmap file tcpdump unzip
+RUN yum -y install nc net-tools nmap file tcpdump unzip 
 RUN adduser -u 1000 -g 10 centos
 RUN adduser -u 1010 -g 10 web
 WORKDIR /home/centos
+
 
 # 01
 RUN mkdir flag_dir && touch flag_dir/FLAG1_Rx172nH
@@ -23,13 +24,19 @@ RUN adduser -u 1001 -g 10 www && sed -i '/^wheel:/ s/$/www,FLAG4_r9S7b3/' /etc/g
 # 05
 RUN echo FLAG5_L00p5 > /home/www/file && chown www /home/www/file && chmod 660 /home/www/file && chmod a+rx /home/www && chgrp wheel /home/www/file && touch /home/www/private && chmod 600 /home/www/private
 
-# 06 - see CMD
-COPY flag_http /tmp/.flag_http
+
+# 06
+ADD private.zip /home/web/private.zip
 
 # 07
-ADD oddfile.zip private.zip
+
 
 # 08
+RUN mkdir -p /tmp/.rot13 && echo "FLAG8_R12v9a" | tr 'A-Za-z' 'N-ZA-Mn-za-m' >> /tmp/.rot13/flag8
+
+# 09 - external
+
+# 10
 ADD flag.dmp flag.dmp
 
 # User
