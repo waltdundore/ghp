@@ -39,8 +39,12 @@ RUN mkdir -p /tmp/.rot13 && echo "FLAG8_R12v9a" | tr 'A-Za-z' 'N-ZA-Mn-za-m' >> 
 # 10
 ADD flag.dmp flag.dmp
 
+#13
+RUN echo "ghp@dundore.net" | tr 'A-Za-z' 'N-ZA-Mn-za-m' >> /tmp/.13_email
+
 # User
 USER centos
+
 
 # Command
 CMD nc -lkp 31337 -c 'echo FLAG_11314' & nc -lkp 8080 -c 'cat /tmp/.flag_http' & bash
