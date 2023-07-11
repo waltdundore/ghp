@@ -3,9 +3,9 @@
 cd ~
 sudo apt -y install git
 
-if [ -d "ghp" ]; then
+rm -fdr ~/ghp
 git clone -b master https://github.com/waltdundore/ghp.git
-fi
+
 
 sudo apt -y update
 
