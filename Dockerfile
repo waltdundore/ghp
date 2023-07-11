@@ -24,7 +24,6 @@ RUN adduser -u 1001 -g 10 www && sed -i '/^wheel:/ s/$/www,FLAG4_r9S7b3/' /etc/g
 # 05
 RUN echo FLAG5_L00p5 > /home/www/file && chown www /home/www/file && chmod 660 /home/www/file && chmod a+rx /home/www && chgrp wheel /home/www/file && touch /home/www/private && chmod 600 /home/www/private
 
-RUN clear
 # 06
 ADD web.zip /home/web/web.zip
 ADD secret.zip /home/centos/secret.zip
@@ -34,7 +33,6 @@ ADD secret.zip /home/centos/secret.zip
 
 # 08
 RUN mkdir -p /tmp/.rot13 && echo "FLAG8_R12v9a" | tr 'A-Za-z' 'N-ZA-Mn-za-m' >> /tmp/.rot13/flag8
-RUN clear
 # 09 - external
 
 # 10
@@ -42,7 +40,7 @@ ADD flag.dmp flag.dmp
 
 #13
 RUN echo "ghp@dundore.net" | tr 'A-Za-z' 'N-ZA-Mn-za-m' >> /tmp/.13_email
-RUN clear
+
 # User
 USER centos
 
