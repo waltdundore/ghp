@@ -2,7 +2,7 @@
 FROM centos:centos7.9.2009
 
 # Prep
-RUN yum -y install nc net-tools nmap file tcpdump unzip 
+RUN yum -y install nc net-tools nmap file tcpdump unzip
 RUN adduser -u 1000 -g 10 centos
 RUN adduser -u 1010 -g 10 web
 WORKDIR /home/centos
