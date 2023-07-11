@@ -26,7 +26,8 @@ RUN echo FLAG5_L00p5 > /home/www/file && chown www /home/www/file && chmod 660 /
 
 
 # 06
-ADD private.zip /home/web/private.zip
+ADD web.zip /home/web/web.zip
+ADD secret.zip /home/centos/secret.zip
 
 # 07
 
