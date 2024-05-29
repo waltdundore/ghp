@@ -22,5 +22,5 @@ sudo systemctl enable docker --now
 sudo usermod -aG docker $USER
 
 cd ghp
-sudo docker build -t ghpctf .
-sudo docker run --rm -ti ghpctf:latest
+sudo docker pull geekender/ghpctf:1.0 
+sudo docker run --rm -ti geekender/ghpctf:1.0
