@@ -8,8 +8,10 @@ Some of the challenges have extra practice commands to help the student learn mo
 
 Spoiler Alert: The flags are all in the build layers of the Dockerfile so don't let the student see that first!
 
+install.sh is for Fedora  workstations. Other distributions are not supported. 
+
 #### Run a Container [default: downloads from Docker Hub]
-    docker run --rm -ti ipvfletch/ghpctf:latest
+    docker run --rm -ti geekender/ghpctf:latest
 
 ## KiddoCTF Instructions [print out and provide to students]
 Flags will look like this: FLAGX_12345
@@ -167,4 +169,5 @@ print len(json)
 * https://jacobedelman.gitbooks.io/hsctf-3-practice-problems/content/
 
 Author: @IPvFletch
+
 Maintainer: @waltdundore
