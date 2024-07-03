@@ -1,26 +1,13 @@
 #!/bin/bash
 
-cd ~
-sudo apt -y install git
+sudo dnf -y install git
+sudo dnf -y install dnf-plugins-core
+sudo dnf -y config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
-rm -fdr ~/ghp
-git clone -b master https://github.com/waltdundore/ghp.git
-
-
-sudo apt -y update
-
-printf '%s\n' "deb https://download.docker.com/linux/debian bullseye stable" |
-  sudo tee /etc/apt/sources.list.d/docker-ce.list
-
-curl -fsSL https://download.docker.com/linux/debian/gpg |
-  sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-ce-archive-keyring.gpg
-
-sudo apt -y update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-
+sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl start docker
 sudo systemctl enable docker --now
 sudo usermod -aG docker $USER
 
-cd ghp
-sudo docker pull geekender/ghpctf:1.0 
-sudo docker run --rm -ti geekender/ghpctf:1.0
+sudo docker pull geekender/ghpctf:latest
+sudo docker run --rm -ti geekender/ghpctf:latest
